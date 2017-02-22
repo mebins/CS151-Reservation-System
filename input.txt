@@ -1,0 +1,41 @@
+P
+Nicole Hernandez
+First
+W
+P
+Mebin Skaria
+First
+A
+P
+P
+Weston Pedigo
+Economy
+W
+P
+Maximillian Raasch
+Economy
+A
+P
+Julian Nakanishi
+Economy
+C
+G
+SJSU
+First
+Jake,Marta,Andy,Samuel,Eric,Erik,Jessica
+G
+SJSU
+First
+Jake,Marta
+G
+SJSU
+Economy
+Samuel,Eric,Erik,Jessica
+C
+Samuel
+C
+SJSU
+M
+A
+Q
+
