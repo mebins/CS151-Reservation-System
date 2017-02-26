@@ -59,20 +59,20 @@ public class ReservationSystem extends Database {
 					}
 				}
 				while (section.equals("")) {
-					System.out.println("Class: ");
+					System.out.println("Class(First or Economy): ");
 					if (sc.hasNextLine()) {
 						section = sc.nextLine();
-					} else {
+					}
+					else {
 						break;
 					}
-
 					if (!(section.toLowerCase().equals("economy") || section.toLowerCase().equals("first"))) {
 						System.out.println("Incorrect Class: " + section);
 						section = "";
 					}
 				}
 				while (temp.equals("")) {
-					System.out.println("Names seperated by commas EX: John Smith,John Smith,John Smith:");
+					System.out.println("Names seperated by commas EX:John Smith, John Smith, John Smith:");
 					if (sc.hasNextLine()) {
 						temp = sc.nextLine();
 					} else {
@@ -80,6 +80,10 @@ public class ReservationSystem extends Database {
 					}
 				}
 				String names[] = temp.split(",");
+				for(int i = 0; i < names.length;i++)
+				{
+					names[i] = names[i].trim();
+				}
 				ArrayList<String> keys = sf.findGroupSeats(available, names.length,
 						section.toLowerCase().equals("first"));
 				int i = 0;
@@ -155,11 +159,18 @@ public class ReservationSystem extends Database {
 
 		}
 		while (section.equals("")) {
-			System.out.print("Which Class: ");
+			System.out.print("Which Class(First or Economy): ");
 			if (sc.hasNextLine()) {
 				section = sc.nextLine();
 			}
-			break;
+			else
+			{
+				break;
+			}
+			if (!(section.toLowerCase().equals("economy") || section.toLowerCase().equals("first"))) {
+				System.out.println("Incorrect Class:" + section);
+				section = "";
+			}
 		}
 
 		while (pref.equals("")) {
@@ -167,16 +178,18 @@ public class ReservationSystem extends Database {
 				System.out.print("Preference[W]indow, [C]enter, [A]isle: ");
 			} else if (section.toLowerCase().equals("first")) {
 				System.out.print("Preference[W]indow, [A]isle: ");
-			} else {
-				System.out.println("Incorrect Class:" + section);
-				menu();
 			}
+			
 			if (sc.hasNextLine()) {
 				pref = sc.nextLine();
+				if(!(pref.toLowerCase().equals("w")||pref.toLowerCase().equals("c")||pref.toLowerCase().equals("a")))
+				{
+					System.out.println("Incorrect Seat Preference: " + pref);
+					pref = "";
+				}
 			} else {
 				break;
 			}
-
 		}
 		reservePassenger(name, section, pref);
 	}
@@ -193,7 +206,7 @@ public class ReservationSystem extends Database {
 	 * @return If successfully reserved a passenger will return true, else will
 	 *         return false.
 	 */
-	private boolean reservePassenger(String name, String section, String pref) {
+	public boolean reservePassenger(String name, String section, String pref) {
 		String seat = "";
 		boolean processed = false;
 		if (section.toLowerCase().equals("economy")) {

@@ -138,8 +138,6 @@ public class Database {
 			list.add("(Group Name)");
 			list.add("(Class)");
 			list.add("(Name,Name,Name) < NO SPACES BETWEEN NAMES");
-			list.add("CORRECT EXAMPLE: ('John Smith,John Smith,John Smith')");
-			list.add("WRONG EXAMPLE: ('John Smith, John Smith, John Smith')");
 			list.add("----------------------------------------------------------------------------------");
 			list.add("To remove a passenger or group:");
 			list.add("C");

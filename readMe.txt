@@ -9,9 +9,7 @@ To add a group:
 G
 (Group Name)
 (Class)
-(Name,Name,Name) < NO SPACES BETWEEN NAMES
-CORRECT EXAMPLE: ('John Smith,John Smith,John Smith')
-WRONG EXAMPLE: ('John Smith, John Smith, John Smith')
+(Name,Name,Name)
 ----------------------------------------------------------------------------------
 To remove a passenger or group:
 C
